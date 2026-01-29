@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linktree Marian</title>
+    <title>Private Projekte</title>
     <style>
         /* --- DESIGN KONFIGURATION --- */
         :root {
@@ -198,6 +198,49 @@
             transform: scale(1.2);
         }
 
+        .photo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-decoration: none;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-dark);
+            backdrop-filter: blur(var(--blur));
+            -webkit-backdrop-filter: blur(var(--blur));
+            box-shadow: var(--shadow);
+            padding: 18px 25px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.2s, color 0.2s;
+
+            /* Basis Animation */
+            opacity: 0;
+            animation: fadeSlideIn var(--anim-speed) ease-out forwards;
+        }
+
+        /* Automatische Verzögerung für die Buttons (Staggering) */
+        .photo:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .photo:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .photo:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .photo:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .photo:nth-child(5) {
+            animation-delay: 0.7s;
+        }
+
         /* Icons */
         .icon {
             width: 24px;
@@ -233,31 +276,46 @@
 <body>
 
     <div class="container">
-
-        <img src="/media/pb.png" alt="Profilbild" class="profile-img">
-
-        <h1 class="name anim-el">Hi, ich bin Marian 👋🏻</h1>
+        <h1 class="name anim-el">Private Projekte</h1>
+        <h2 class="name anim-el">Advent in den Friesdorfer Höfen</h2>
         <p class="bio anim-el">
-            Ich interessiere mich für Züge, Technik und Design. <br>Auf dieser Seite findest du einige meiner
-            Vibe-Coding-Projekte und von mir erstellte Designs.
+            Von Jahr zu Jahr verbessere ich die anfangs durch Baukasten, nun durch Vibe-Coding erstellte WebApp.
+            <br>Im letzten Jahr gab es ein großes Redesign, um dem Design der gedruckten Flyer und Plakate zu
+            entsprechen.
+            <br>Die WebApp dient als interaktive Übersicht über alle Stände, Produkte und Merkmale jedes Hofes. Zudem
+            gibt es eine interaktive Karte, damit man sich gut zurecht findet.
+            <br>Die WebApp ist auf Grund der "Sommerpause" nur eingeschränkt nutzbar, da wir derzeit mit keinem Andrang
+            rechnen. Möglicherweise funktioniert sie für dich aber trotzdem, schau doch mal vorbei!
         </p>
 
         <nav class="link-list">
 
-            <a href="/picnic/index.html" class="link-btn">
-                <img src="/media/picnic-mono.png" class="icon" alt="Picnic Logo">
-                Picnic Cooperate Design
+            <a href="https://advent-in-den-friesdorfer-hoefen.de" class="link-btn" target="_blank">
+                <img src="/media/web.svg" class="icon" alt="Picnic Logo">
+                WebApp "Advent in den Friesdorfer Höfen"
             </a>
+        </nav> <br><br>
+        <h2 class="name anim-el">Barbyer Kartoffelbox</h2>
+        <p class="bio anim-el">
+            Die Barbyer Kartoffelbox ist ein Regionaler SB-Laden für Landwirtschaftliche Produkte aus Barby und
+            Umgebung. Zur besseren Produktpräsentation habe ich für diese eine WebApp gebaut, die die Produkte und deren
+            Informationen anzeigt.
+        </p>
 
-            <a href="/schule/index.html" class="link-btn">
-                <img class="icon" src="/media/school.svg" alt="Schule Logo">
-                Schulische Projekte
-            </a>
+        <nav class="link-list">
 
-            <a href="/privat/index.html" class="link-btn">
-                <img src="/media/m.svg" class="icon" alt="Logo">
-                Private Projekte
+            <a href="https://barbyer-kartoffelkiste.glide.page/" class="link-btn" target="_blank">
+                <img src="/media/web.svg" class="icon" alt="Picnic Logo">
+                WebApp "Barbyer Kartoffelbox"
             </a>
+        </nav> <br><br>
+        <h2 class="name anim-el">Instagram</h2>
+        <p class="bio anim-el">
+            Auf meinem eigenen Instagram-Kanal @train.busspotter_nienburg teile ich Fotos und Videos von Zügen, Bussen
+            und weiteren Teilen des ÖPNVs. Zukünftig möchte ich dort meinen Arbeitsalltag im Bahnbereich präsentieren.
+        </p>
+
+        <nav class="link-list">
 
             <a href="https://instagram.com/train.busspotter_nienburg" class="link-btn" target="_blank">
                 <svg class="icon" viewBox="0 0 24 24">
@@ -266,9 +324,7 @@
                 </svg>
                 @train.busspotter_nienburg
             </a>
-
         </nav>
-
         <footer>
             © 2026 Marian Zingel <br>
             <a href="mailto:marian@moorjan.site">Email schreiben</a>

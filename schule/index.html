@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linktree Marian</title>
+    <title>Schule</title>
     <style>
         /* --- DESIGN KONFIGURATION --- */
         :root {
@@ -198,6 +198,49 @@
             transform: scale(1.2);
         }
 
+        .photo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-decoration: none;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-dark);
+            backdrop-filter: blur(var(--blur));
+            -webkit-backdrop-filter: blur(var(--blur));
+            box-shadow: var(--shadow);
+            padding: 18px 25px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.2s, color 0.2s;
+
+            /* Basis Animation */
+            opacity: 0;
+            animation: fadeSlideIn var(--anim-speed) ease-out forwards;
+        }
+
+        /* Automatische Verzögerung für die Buttons (Staggering) */
+        .photo:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .photo:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .photo:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .photo:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .photo:nth-child(5) {
+            animation-delay: 0.7s;
+        }
+
         /* Icons */
         .icon {
             width: 24px;
@@ -233,42 +276,78 @@
 <body>
 
     <div class="container">
-
-        <img src="/media/pb.png" alt="Profilbild" class="profile-img">
-
-        <h1 class="name anim-el">Hi, ich bin Marian 👋🏻</h1>
+        <h1 class="name anim-el">Schulische Projekte</h1>
+        <h2 class="name anim-el">Instagram und co.</h2>
         <p class="bio anim-el">
-            Ich interessiere mich für Züge, Technik und Design. <br>Auf dieser Seite findest du einige meiner
-            Vibe-Coding-Projekte und von mir erstellte Designs.
+            Unsere Schule wird immer digitaler und das nicht nur im Unterricht.
+            Auf unserem Instagram-Account berichten wir
+            beispielsweise über Ausflüge und Projekte.<br>
+            Einige Inhalte hiervon habe ich mit erstellt.
         </p>
 
         <nav class="link-list">
 
-            <a href="/picnic/index.html" class="link-btn">
-                <img src="/media/picnic-mono.png" class="icon" alt="Picnic Logo">
-                Picnic Cooperate Design
+            <a href="https://www.instagram.com/reel/DO0RyF9CD8I" class="link-btn" target="_blank">
+                <img src="/media/web.svg" class="icon" alt="Picnic Logo">
+                Werbung für den Tag der offenen Tür
             </a>
 
-            <a href="/schule/index.html" class="link-btn">
-                <img class="icon" src="/media/school.svg" alt="Schule Logo">
-                Schulische Projekte
+            <a href="https://www.instagram.com/reel/DKsN_p-Iklp/" class="link-btn" target="_blank">
+                <img src="/media/web.svg" class="icon" alt="Picnic Logo">
+                Exkursion Flughafen Leipzig/Halle
             </a>
+        </nav> <br><br>
+        <h2 class="name anim-el">Musikstadt Erfurt</h2>
+        <p class="bio anim-el">
+            Gemeinsam mit Thade Kursawsky arbeiten wir derzeit an unserem Portfolio-Projekt "Musikstadt Erfurt" für den
+            Musikunterricht. <br> Dieses Projekt befindet sich noch in der Entwicklung, daher sind möglicherweise noch
+            nicht alle Seiten vollständig verfügbar oder werden noch überarbeitet. Wir sind trotzdem schon sehr stolz
+            auf das, was wir bisher erreicht haben.
+        </p>
 
-            <a href="/privat/index.html" class="link-btn">
-                <img src="/media/m.svg" class="icon" alt="Logo">
-                Private Projekte
-            </a>
+        <nav class="link-list">
 
-            <a href="https://instagram.com/train.busspotter_nienburg" class="link-btn" target="_blank">
-                <svg class="icon" viewBox="0 0 24 24">
-                    <path
-                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.148 3.228-1.667 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.148-4.771-1.691-4.919-4.919-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.667-4.771 4.919-4.919 1.266-.058 1.646-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.072-4.948-.2-4.354-2.618-6.782-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-                @train.busspotter_nienburg
+            <a href="https://erfurt.schule.moorjan.site" class="link-btn" target="_blank">
+                <img src="/media/web.svg" class="icon" alt="Picnic Logo">
+                Musikstadt Erfurt
             </a>
+        </nav> <br><br>
+        <h2 class="name anim-el">Digitales Hausaufgabenheft "SchiPla"</h2>
+        <p class="bio anim-el">
+            2024 habe ich für einige Schüler meiner Klasse ein digitales Hausaufgabenheft erstellt, welches wir
+            "SchiPla"
+            nennen und bis heute aktiv nutzen. In diesem trage wir nach dem Motto "Jeder für jeden" sämtliche
+            Hausaufgaben, Tests, Klassenarbeiten,
+            Termine und Stundeninfos ein. Da
+            jeder Nutzer seinen eigenen Kursen zugewiesen ist, bekommt er auch nur die Inhalte angezeigt, die für ihn
+            relevant sind.
+        </p><br><br>
+        <h2 class="name anim-el">Vorträge</h2>
+        <p class="bio anim-el">
+            Für Vorträge und die dazugehörigen Quizze, Handouts und weiteres Infomaterial nutze ich einen Teil meiner Website. Dieser befindet sich derzeit im "Neubau".
+        </p><br><br>
+        <h2 class="name anim-el">Lernvideos für den Unterricht</h2>
+        <p class="bio anim-el">
+            Ebenfalls gemeinsam mit Thade Kursawsky erstelle ich Lernvideos für verschiedene Fächer und Themen. Wir
+            haben bisher besipielsweise die Themen "Gendern" im Ethikunterricht, "Wasser" im Chemieunterricht, sowie
+            "Rauchen",
+            "Embryos" und "Bienen" in Biologie behandelt. Besonders lustig war zudem der Werbespot für unsere imaginäre
+            Marke
+            "Hakiko", welchen wir mit Julius Linder und Louis Türmer im Musikunterricht aufgenommen haben.
+        </p><br><br>
+        <h2 class="name anim-el">Weihnachtskonzert</h2>
+        <p class="bio anim-el">
+            Thade Kursawsky und ich haben die Weihnachtskonzerte 2024 und 2025 unserer Schule technisch unterstützt. Das
+            Programmheft der Jahre 2023, 2024 und 2025 habe ebenfalls ich erstellt.
+        </p>
+
+        <nav class="link-list">
+            <img src="/media/weihnachtskonzert (2).png" class="photo">
+            <img src="/media/weihnachtskonzert (3).png" class="photo">
+            <img src="/media/weihnachtskonzert (4).png" class="photo">
+            <img src="/media/weihnachtskonzert (1).png" class="photo">
 
         </nav>
-
         <footer>
             © 2026 Marian Zingel <br>
             <a href="mailto:marian@moorjan.site">Email schreiben</a>

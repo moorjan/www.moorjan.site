@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linktree Marian</title>
+    <title>Picnic</title>
     <style>
         /* --- DESIGN KONFIGURATION --- */
         :root {
@@ -113,6 +113,17 @@
             transform: scale(1.05) rotate(2deg);
         }
 
+        .logo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+
+            /* Animation Start */
+            animation-delay: 0s;
+        }
+
         .name {
             font-size: 1.8rem;
             font-weight: 800;
@@ -181,13 +192,6 @@
             animation-delay: 0.7s;
         }
 
-        .link-btn:hover {
-            transform: translateY(-5px) scale(1.02);
-            /* Etwas dynamischerer Hover */
-            border-color: var(--primary-orange);
-            color: var(--primary-orange);
-            background: rgba(255, 255, 255, 0.95);
-        }
 
         .link-btn:active {
             transform: scale(0.98);
@@ -226,6 +230,62 @@
             text-decoration: none;
             font-weight: 600;
         }
+
+        /* --- SYMBOLIK CAROUSEL ANIMATION --- */
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                /* Berechnung: (Breite + Gap) * Anzahl der Original-Items */
+                /* (80px + 30px) * 9 = 990px */
+                transform: translateX(calc(-80px * 9 - 30px * 9));
+            }
+        }
+
+        .symbolik-carousel {
+            width: 100%;
+            overflow: hidden;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(var(--blur));
+            -webkit-backdrop-filter: blur(var(--blur));
+            box-shadow: var(--shadow);
+            border-radius: 16px;
+            padding: 20px 0;
+            margin: 35px 0;
+            opacity: 0;
+            animation: fadeSlideIn var(--anim-speed) ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .symbolik-track {
+            display: flex;
+            gap: 30px;
+            animation: scrollLeft 20s linear infinite;
+            /* WICHTIG: Padding entfernt und width gesetzt für flüssigen Loop */
+            padding: 0;
+            width: max-content;
+        }
+
+        /* Pause Animation beim Fade-Out */
+        body.fade-out .symbolik-track {
+            animation-play-state: paused;
+        }
+
+        .symbolik-item {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s;
+        }
+
+        .symbolik-item:hover {
+            transform: scale(1.1);
+        }
     </style>
     <link rel="icon" href="/media/m.svg" type="image/svg+xml">
 </head>
@@ -234,39 +294,53 @@
 
     <div class="container">
 
-        <img src="/media/pb.png" alt="Profilbild" class="profile-img">
+        <img src="/media/picnic.svg" alt="Profilbild" class="logo">
 
-        <h1 class="name anim-el">Hi, ich bin Marian 👋🏻</h1>
+        <h1 class="name anim-el">Das Picnic Cooperate Design</h1>
         <p class="bio anim-el">
-            Ich interessiere mich für Züge, Technik und Design. <br>Auf dieser Seite findest du einige meiner
-            Vibe-Coding-Projekte und von mir erstellte Designs.
+            Vor einigen Jahren habe ich das Cooperate Design für unsere Schülerfirma Picnic vollständig überarbeitet. Unser neues Logo war
+            dabei mein Ansatzpunkt. Dieses wurde von einem Kunstkurs unserer Schule entworfen und war Gewinner des
+            Wettbewerbs.<br>
+            Ich habe es immer weiter entwickelt, sodass wir nun ein einheitliches Design für alle Druckprodukte aber
+            auch digitalen Anwendungen haben. <br>
+            Ein Punkt auf welchen ich persönlich besonders stolz bin, ist unsere eigene Symbolik, wobei die Symbole aus
+            einer Kombination unserer unseren beiden Unternehmensfarben Orange und Limone (Hellgrün) bestehen.
         </p>
 
+        <div class="symbolik-carousel">
+            <div class="symbolik-track">
+                <img src="/media/symbolik/1.svg" alt="Symbol 1" class="symbolik-item">
+                <img src="/media/symbolik/2.svg" alt="Symbol 2" class="symbolik-item">
+                <img src="/media/symbolik/3.svg" alt="Symbol 3" class="symbolik-item">
+                <img src="/media/symbolik/4.svg" alt="Symbol 4" class="symbolik-item">
+                <img src="/media/symbolik/5.svg" alt="Symbol 5" class="symbolik-item">
+                <img src="/media/symbolik/6.svg" alt="Symbol 6" class="symbolik-item">
+                <img src="/media/symbolik/7.svg" alt="Symbol 7" class="symbolik-item">
+                <img src="/media/symbolik/8.svg" alt="Symbol 8" class="symbolik-item">
+                <img src="/media/symbolik/9.svg" alt="Symbol 9" class="symbolik-item">
+
+                <img src="/media/symbolik/1.svg" alt="Symbol 1" class="symbolik-item">
+                <img src="/media/symbolik/2.svg" alt="Symbol 2" class="symbolik-item">
+                <img src="/media/symbolik/3.svg" alt="Symbol 3" class="symbolik-item">
+                <img src="/media/symbolik/4.svg" alt="Symbol 4" class="symbolik-item">
+                <img src="/media/symbolik/5.svg" alt="Symbol 5" class="symbolik-item">
+                <img src="/media/symbolik/6.svg" alt="Symbol 6" class="symbolik-item">
+                <img src="/media/symbolik/7.svg" alt="Symbol 7" class="symbolik-item">
+                <img src="/media/symbolik/8.svg" alt="Symbol 8" class="symbolik-item">
+                <img src="/media/symbolik/9.svg" alt="Symbol 9" class="symbolik-item">
+            </div>
+        </div>
+
         <nav class="link-list">
-
-            <a href="/picnic/index.html" class="link-btn">
-                <img src="/media/picnic-mono.png" class="icon" alt="Picnic Logo">
-                Picnic Cooperate Design
-            </a>
-
-            <a href="/schule/index.html" class="link-btn">
-                <img class="icon" src="/media/school.svg" alt="Schule Logo">
-                Schulische Projekte
-            </a>
-
-            <a href="/privat/index.html" class="link-btn">
-                <img src="/media/m.svg" class="icon" alt="Logo">
-                Private Projekte
-            </a>
-
-            <a href="https://instagram.com/train.busspotter_nienburg" class="link-btn" target="_blank">
-                <svg class="icon" viewBox="0 0 24 24">
-                    <path
-                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.148 3.228-1.667 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.148-4.771-1.691-4.919-4.919-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.667-4.771 4.919-4.919 1.266-.058 1.646-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.072-4.948-.2-4.354-2.618-6.782-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-                @train.busspotter_nienburg
-            </a>
-
+            <img src="/media/PIC-AK251209.png" class="link-btn">
+        </nav>
+        <br>
+        <nav class="link-list">
+            <img src="/media/PIC-AG1.png" class="link-btn">
+        </nav>
+        <br>
+        <nav class="link-list">
+            <img src="/media/PIC_250526F.png" class="link-btn">
         </nav>
 
         <footer>
